@@ -40,7 +40,7 @@ const Nav = () => {
         <p className="logo_text">Prompt Ai</p>
       </Link>
 
-      {/* Destop Naigation */}
+      {/* Desktop Navigation */}
 
       <div className='sm:flex hidden'>
         { session?.user ? (
@@ -56,7 +56,7 @@ const Nav = () => {
             </button>
 
             <Link href="/profile">
-              <Image src="/assets/images/logo.svg"
+              <Image src={ session?.user.image }
               width={37}
               height={37}
               className='rounded-full'
@@ -87,7 +87,7 @@ const Nav = () => {
       <div className='sm:hidden flex relative'>
         { session?.user ? (
           <div className='flex'>
-            <Image src="/assets/images/logo.svg"
+            <Image src={ session?.user.image }
               width={37}
               height={37}
               className='rounded-full'
@@ -105,7 +105,7 @@ const Nav = () => {
                   </Link>
                   
                   <Link 
-                    href="/profile" 
+                    href="/create-prompt" 
                     className='dropdown_link'
                     onClick={() => setToggleDropdown(false)}>
                     Create Prompt
